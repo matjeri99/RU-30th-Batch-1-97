@@ -348,7 +348,9 @@ async function api(action, payload = {}) {
   try {
     res = await fetch(CFG.API_URL, { method: 'POST', body: JSON.stringify({ action, token: S.token, ...payload }) });
   } catch (e) {
-    throw new Error('Tiada sambungan internet. Cuba lagi sebentar.');
+    throw new Error(navigator.onLine
+      ? 'Tidak dapat menghubungi pelayan. Jika berterusan, maklumkan AJK.'
+      : 'Tiada sambungan internet. Cuba lagi sebentar.');
   }
   let j;
   try { j = await res.json(); } catch (e) { throw new Error('Pelayan tidak memberi respons yang sah. Semak API_URL dan deployment.'); }
@@ -374,6 +376,10 @@ async function denganSibuk(btn, teks, fn) {
 function waPautan(tel, mesej) {
   return `https://wa.me/6${String(tel).replace(/\D/g, '').replace(/^6?0/, '0')}?text=${encodeURIComponent(mesej)}`;
 }
+
+const MOD_APP = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+const DALAM_APP_LAIN = /FBAN|FBAV|FB_IAB|Instagram|Line\/|MicroMessenger|WhatsApp/i.test(navigator.userAgent);
+const IOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
 /* ================= Muat & draf ================= */
 function initDraf() {
@@ -401,7 +407,7 @@ async function muat() {
 }
 
 function keluar(senyap) {
-  store.del('iku97_token'); store.del('iku97_data');
+  store.del('iku97_token'); store.del('iku97_data'); if (!senyap) store.del('iku97_kod');
   Object.assign(S, { token: null, data: null, view: 'login', tab: 'utama', keputusan: null, admin: null });
   render();
   if (!senyap) toast('Anda telah log keluar.');
@@ -411,8 +417,11 @@ function keluar(senyap) {
 const cop = saiz => `<div class="cop ${saiz}" aria-hidden="true"><b>30</b><small>tahun</small></div>`;
 
 function vLogin() {
-  const p = S.prefill || {};
-  return `<main class="wrap masuk">
+  const p = S.prefill || { telefon: store.get('iku97_tel') || '', kod: store.get('iku97_kod') || '' };
+  let nota = '';
+  if (DALAM_APP_LAIN) nota = `<p class="amaran">Anda sedang buka app ini di dalam WhatsApp atau Facebook. Log masuk tidak akan diingati di sini. Tekan menu ⋮ atau ⋯ dan pilih <b>Buka dalam Chrome/Safari</b>.</p>`;
+  else if (MOD_APP && IOS) nota = `<p class="amaran">Kali pertama buka app yang dipasang di iPhone, anda perlu log masuk sekali lagi. Selepas itu app akan ingat anda.</p>`;
+  return `<main class="wrap masuk">${nota}
     <div class="hero">
       ${cop('besar')}
       <h1>Reunion IKU Bangsar</h1>
@@ -508,6 +517,7 @@ function vUtama() {
   </ol>
   <div class="lain">
     ${S.pasang ? `<button class="btn" data-act="pasang">Pasang app di telefon</button>` : ''}
+    ${store.get('iku97_kod') ? `<a class="btn" href="${waPautan(me.telefon, `Pautan log masuk Reunion IKU 1/97 saya (jangan kongsi):\n${location.origin + location.pathname}?p=${me.telefon}&k=${store.get('iku97_kod')}`)}" target="_blank" rel="noopener">Simpan pautan log masuk ke WhatsApp saya</a>` : ''}
     ${me.admin ? `<button class="btn" data-act="tab" data-tab="admin">Buka panel AJK</button>` : ''}
     ${t.noWaAjk ? `<a class="pautan" href="${waPautan(t.noWaAjk, `Salam AJK, saya ${me.nama} (Batch 1/97). Saya ada pertanyaan tentang reunion.`)}" target="_blank" rel="noopener">Tanya AJK di WhatsApp</a>` : ''}
     <button class="pautan" data-act="keluar">Log keluar</button>
@@ -908,6 +918,9 @@ const BORANG = {
       await denganSibuk(btn, 'Menyemak…', async () => {
         const r = await api('login', { telefon: fd.get('telefon'), kod: String(fd.get('kod')).trim().toUpperCase() });
         S.token = r.token; store.set('iku97_token', r.token);
+        store.set('iku97_tel', String(fd.get('telefon')).trim());
+        store.set('iku97_kod', String(fd.get('kod')).trim().toUpperCase());
+        if (navigator.storage && navigator.storage.persist) navigator.storage.persist().catch(() => {});
         S.tab = 'utama'; S.prefill = null;
       });
       render(); await muat();
@@ -978,6 +991,7 @@ window.addEventListener('offline', semakTalian);
 (function mula() {
   semakTalian();
   const q = new URLSearchParams(location.search);
+  if (q.has('daftar') && !S.token) { S.view = 'daftar'; history.replaceState(null, '', location.pathname); }
   if (q.get('k')) {
     S.prefill = { telefon: q.get('p') || '', kod: q.get('k') };
     history.replaceState(null, '', location.pathname);
