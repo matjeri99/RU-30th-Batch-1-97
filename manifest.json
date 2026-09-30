@@ -1,0 +1,17 @@
+{
+  "name": "Reunion 30 Tahun IKU Bangsar 1/97",
+  "short_name": "Reunion IKU",
+  "description": "Undian tarikh, tempat dan kaji selidik Reunion 30 Tahun IKU Bangsar Batch 1/97",
+  "lang": "ms",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#EDF2F0",
+  "theme_color": "#0E4D45",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

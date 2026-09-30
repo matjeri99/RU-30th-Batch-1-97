@@ -1,0 +1,1003 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0E4D45">
+<meta name="description" content="Undian tarikh dan tempat Reunion 30 Tahun IKU Bangsar Batch 1/97">
+<title>Reunion 30 Tahun IKU Bangsar 1/97</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Reunion IKU">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap" rel="stylesheet">
+<script src="config.js"></script>
+<style>
+:root {
+  --latar: #EDF2F0;
+  --kad: #FFFFFF;
+  --dakwat: #13231F;
+  --redup: #51625D;
+  --kampus: #0E4D45;
+  --atas-kampus: #FFFFFF;
+  --kampus-lembut: #D6E7E2;
+  --manila: #E8C872;
+  --manila-lembut: #F7EBC4;
+  --cop: #A93A46;
+  --garis: #C8D5D0;
+  --ok: #1F7A4D;
+  --fon-papar: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --fon-teks: "Atkinson Hyperlegible", "Segoe UI", system-ui, -apple-system, sans-serif;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --latar: #0D1614; --kad: #15211E; --dakwat: #E7EFEC; --redup: #9DB0AA;
+    --kampus: #5FC0AE; --atas-kampus: #0D1614; --kampus-lembut: #1B3530;
+    --manila: #E8C872; --manila-lembut: #3A331C; --cop: #E57F8A; --garis: #2A3A36; --ok: #6CCB97;
+  }
+}
+:root[data-theme="dark"] {
+  --latar: #0D1614; --kad: #15211E; --dakwat: #E7EFEC; --redup: #9DB0AA;
+  --kampus: #5FC0AE; --atas-kampus: #0D1614; --kampus-lembut: #1B3530;
+  --manila: #E8C872; --manila-lembut: #3A331C; --cop: #E57F8A; --garis: #2A3A36; --ok: #6CCB97;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0; background: var(--latar); color: var(--dakwat);
+  font: 17px/1.55 var(--fon-teks);
+  padding-top: env(safe-area-inset-top, 0px);
+}
+h1, h2, h3 { font-family: var(--fon-papar); font-weight: 800; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+h1 { font-size: 1.85rem; }
+h2 { font-size: 1.3rem; margin: 2rem 0 .75rem; }
+p { margin: 0 0 .9rem; }
+small { font-size: .88rem; color: var(--redup); display: block; }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--manila); outline-offset: 2px; border-radius: 6px; }
+svg { flex: none; }
+
+.wrap { max-width: 36rem; margin: 0 auto; padding: 20px 18px calc(170px + env(safe-area-inset-bottom, 0px)); }
+.wrap.masuk { padding-bottom: 60px; }
+
+/* ---------- Cop 30 tahun (elemen tanda) ---------- */
+.cop {
+  display: grid; place-items: center; align-content: center;
+  border: 3px solid var(--cop); border-radius: 50%;
+  outline: 1.5px solid var(--cop); outline-offset: 4px;
+  color: var(--cop); transform: rotate(-9deg); text-align: center;
+}
+.cop b { font-family: var(--fon-papar); font-weight: 800; line-height: .9; }
+.cop small { color: var(--cop); font-size: .72rem; margin-top: 2px; }
+.cop.besar { width: 150px; height: 150px; }
+.cop.besar b { font-size: 4.2rem; }
+.cop.besar small { font-size: .95rem; }
+.cop.kecil { width: 74px; height: 74px; position: absolute; right: 16px; top: 44px; opacity: .92; }
+.cop.kecil b { font-size: 1.9rem; }
+@media (prefers-reduced-motion: no-preference) {
+  .hero .cop { animation: tekan .7s cubic-bezier(.2,1.6,.4,1) both .15s; }
+  @keyframes tekan { from { transform: rotate(-9deg) scale(1.6); opacity: 0; } to { transform: rotate(-9deg) scale(1); opacity: 1; } }
+}
+
+/* ---------- Log masuk ---------- */
+.hero { padding: 28px 0 22px; }
+.hero h1 { font-size: 2.3rem; margin-top: 26px; }
+.hero .sub { color: var(--redup); font-size: 1.05rem; max-width: 30ch; margin-top: 8px; }
+.panel { background: var(--kad); border: 1px solid var(--garis); border-radius: 16px; padding: 20px; }
+.medan { display: block; margin-bottom: 16px; }
+.medan > span { display: block; font-weight: 700; margin-bottom: 6px; }
+.medan > small { margin-top: 4px; }
+input[type=tel], input[type=text], input[type=email], input[type=search], input[type=number], select, textarea {
+  width: 100%; min-height: 52px; padding: 12px 14px; border: 1.5px solid var(--garis);
+  border-radius: 10px; background: var(--latar); font-size: 1.05rem;
+}
+textarea { min-height: 96px; resize: vertical; }
+input.kod { font-family: var(--fon-papar); font-weight: 800; letter-spacing: .25em; text-transform: uppercase; }
+.nota { color: var(--redup); margin-top: 18px; }
+.ralat { color: var(--cop); font-weight: 700; margin: 12px 0 0; min-height: 1.2em; }
+.ralat:empty { display: none; }
+
+/* ---------- Butang ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 52px; padding: 0 20px; border-radius: 12px; border: 1.5px solid var(--garis);
+  background: var(--kad); font-weight: 700; cursor: pointer; text-decoration: none; color: var(--dakwat);
+}
+.btn.utama { background: var(--kampus); color: var(--atas-kampus); border-color: var(--kampus); width: 100%; font-size: 1.05rem; }
+.btn.kecil { min-height: 40px; padding: 0 14px; font-size: .92rem; border-radius: 10px; }
+.btn.wa { background: #1E8E4E; border-color: #1E8E4E; color: #fff; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+.pautan { background: none; border: 0; padding: 6px 0; color: var(--kampus); font-weight: 700; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.baris-butang { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+
+/* ---------- Kad alumni ---------- */
+.kad-matrik {
+  position: relative; display: grid; grid-template-columns: 34px 1fr;
+  background: var(--kad); border: 1px solid var(--garis); border-radius: 14px; overflow: hidden;
+  box-shadow: 0 1px 0 var(--garis), 0 10px 24px -18px rgba(14, 77, 69, .6);
+}
+.kad-matrik .jalur {
+  background: var(--kampus); color: var(--atas-kampus); writing-mode: vertical-rl; transform: rotate(180deg);
+  display: flex; justify-content: space-between; padding: 14px 0; font-size: .75rem; font-weight: 700; text-align: center;
+  align-items: center;
+}
+.kad-matrik .isi { padding: 18px 100px 18px 18px; min-height: 170px; }
+.kad-matrik .jenis { font-size: .85rem; color: var(--redup); margin: 0 0 6px; }
+.kad-matrik .nama { font-size: 1.5rem; overflow-wrap: anywhere; }
+.kad-matrik dl { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 16px 0 0; }
+.kad-matrik dt { font-size: .78rem; color: var(--redup); }
+.kad-matrik dd { margin: 0; font-weight: 700; }
+.aluan { margin-top: 18px; font-size: 1.05rem; }
+.status-undi { background: var(--manila-lembut); border-left: 4px solid var(--manila); padding: 10px 14px; border-radius: 0 10px 10px 0; }
+
+/* ---------- Senarai langkah ---------- */
+.kiraan { font-family: var(--fon-teks); font-weight: 400; font-size: .9rem; color: var(--redup); margin-left: 6px; }
+.tugas { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.tugas button {
+  width: 100%; display: grid; grid-template-columns: 40px 1fr auto; gap: 12px; align-items: center; text-align: left;
+  padding: 14px; background: var(--kad); border: 1.5px solid var(--garis); border-radius: 12px; cursor: pointer;
+}
+.tugas .no { width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; font-family: var(--fon-papar); font-weight: 800; background: var(--kampus-lembut); color: var(--kampus); }
+.tugas .siap .no { background: var(--ok); color: #fff; }
+.tugas b { display: block; }
+.tugas .tanda { font-size: .85rem; font-weight: 700; color: var(--redup); }
+.tugas .siap .tanda { color: var(--ok); }
+.lain { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--garis); display: grid; gap: 10px; justify-items: start; }
+
+/* ---------- Kepala halaman ---------- */
+.kepala { margin: 8px 0 18px; }
+.kepala h1 { margin-bottom: 10px; }
+.kepala p { color: var(--redup); }
+.amaran { background: var(--manila-lembut); padding: 12px 14px; border-radius: 10px; font-weight: 700; }
+
+/* ---------- Pilihan tarikh ---------- */
+.senarai-pilih { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.pilih-tarikh {
+  width: 100%; display: grid; grid-template-columns: 86px 1fr 32px; gap: 14px; align-items: center; text-align: left;
+  background: var(--kad); border: 2px solid var(--garis); border-radius: 14px; padding: 12px; cursor: pointer;
+}
+.pilih-tarikh.tiada { grid-template-columns: 1fr 32px; }
+.pilih-tarikh[aria-checked="true"] { border-color: var(--kampus); background: var(--kampus-lembut); }
+.tarikh-blok { text-align: center; border-right: 1px dashed var(--garis); padding-right: 12px; }
+.tarikh-blok b { font-family: var(--fon-papar); font-weight: 800; font-size: 1.05rem; display: block; line-height: 1.15; }
+.tarikh-isi b { display: block; }
+.catatan { margin-top: 4px; }
+.kotak { width: 30px; height: 30px; border: 2px solid var(--garis); border-radius: 8px; display: grid; place-items: center; background: var(--kad); }
+[aria-checked="true"] > .kotak { background: var(--kampus); border-color: var(--kampus); color: var(--atas-kampus); }
+
+/* ---------- Susunan tempat ---------- */
+.tempat { background: var(--kad); border: 1.5px solid var(--garis); border-radius: 14px; padding: 14px; }
+.baris-atas { display: grid; grid-template-columns: 38px 1fr auto; gap: 12px; align-items: start; }
+.kedudukan { font-family: var(--fon-papar); font-weight: 800; font-size: 1.6rem; color: var(--kampus); line-height: 1; padding-top: 2px; }
+.gerak { display: flex; gap: 6px; }
+.gerak button { width: 44px; height: 44px; border-radius: 10px; border: 1.5px solid var(--garis); background: var(--latar); cursor: pointer; display: grid; place-items: center; }
+.gerak button:disabled { opacity: .3; cursor: default; }
+.segmen { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 12px; }
+.segmen button { min-height: 44px; border-radius: 10px; border: 1.5px solid var(--garis); background: var(--latar); font-size: .9rem; font-weight: 700; cursor: pointer; padding: 4px; }
+.segmen .h-boleh[aria-checked="true"] { background: var(--ok); border-color: var(--ok); color: #fff; }
+.segmen .h-mungkin[aria-checked="true"] { background: var(--manila); border-color: var(--manila); color: #13231F; }
+.segmen .h-tidak[aria-checked="true"] { background: var(--cop); border-color: var(--cop); color: #fff; }
+
+/* ---------- Borang ---------- */
+fieldset { border: 0; padding: 0; margin: 0 0 24px; }
+legend { font-weight: 700; font-size: 1.05rem; margin-bottom: 4px; padding: 0; }
+fieldset > small { margin-bottom: 10px; }
+.pil { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.pil label { position: relative; }
+.pil input { position: absolute; opacity: 0; inset: 0; margin: 0; cursor: pointer; }
+.pil span { display: inline-flex; align-items: center; min-height: 46px; padding: 0 16px; border: 1.5px solid var(--garis); border-radius: 999px; background: var(--kad); font-weight: 700; }
+.pil input:checked + span { background: var(--kampus); border-color: var(--kampus); color: var(--atas-kampus); }
+.pil input:focus-visible + span { outline: 3px solid var(--manila); outline-offset: 2px; }
+.pengira { display: flex; align-items: center; gap: 10px; margin-top: 8px; }
+.pengira button { width: 46px; height: 46px; border-radius: 10px; border: 1.5px solid var(--garis); background: var(--kad); font-size: 1.4rem; cursor: pointer; }
+.pengira input { width: 80px; text-align: center; }
+
+/* ---------- Bar simpan ---------- */
+.bar-simpan {
+  position: fixed; left: 0; right: 0; bottom: calc(68px + env(safe-area-inset-bottom, 0px)); z-index: 5;
+  background: var(--kad); border-top: 1px solid var(--garis); padding: 10px 18px;
+}
+.bar-simpan > div { max-width: 36rem; margin: 0 auto; }
+.bar-simpan p { font-size: .88rem; color: var(--redup); margin: 0 0 6px; }
+
+/* ---------- Navigasi bawah ---------- */
+.nav {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 6; background: var(--kad); border-top: 1px solid var(--garis);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+.nav ul { list-style: none; margin: 0 auto; padding: 0; max-width: 36rem; display: grid; grid-template-columns: repeat(5, 1fr); }
+.nav button {
+  width: 100%; height: 68px; display: grid; justify-items: center; align-content: center; gap: 3px;
+  background: none; border: 0; font-size: .75rem; font-weight: 700; color: var(--redup); cursor: pointer; position: relative;
+}
+.nav button[aria-current="page"] { color: var(--kampus); }
+.nav button[aria-current="page"]::before { content: ""; position: absolute; top: 0; left: 25%; right: 25%; height: 3px; background: var(--kampus); border-radius: 0 0 3px 3px; }
+.nav .titik { position: absolute; top: 12px; right: calc(50% - 18px); width: 9px; height: 9px; border-radius: 50%; background: var(--cop); }
+
+/* ---------- Keputusan ---------- */
+.hasil-senarai { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.hasil { background: var(--kad); border: 1px solid var(--garis); border-radius: 12px; padding: 14px; }
+.hasil-atas { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.hasil-atas span { font-weight: 700; white-space: nowrap; }
+.palang { position: relative; height: 12px; background: var(--latar); border-radius: 6px; overflow: hidden; margin: 10px 0 6px; }
+.palang i { position: absolute; left: 0; top: 0; bottom: 0; background: var(--kampus-lembut); border-radius: 6px; }
+.palang i.depan { background: var(--kampus); }
+.tindan { display: flex; height: 10px; border-radius: 5px; overflow: hidden; background: var(--latar); margin: 8px 0 6px; }
+.tindan i:nth-child(1) { background: var(--ok); }
+.tindan i:nth-child(2) { background: var(--manila); }
+.tindan i:nth-child(3) { background: var(--cop); }
+.amaran-kecil { color: var(--cop); font-weight: 700; font-size: .88rem; margin-top: 4px; display: block; }
+.ringkas { display: grid; gap: 10px; margin: 0; }
+.ringkas div { background: var(--kad); border: 1px solid var(--garis); border-radius: 12px; padding: 12px 14px; }
+.ringkas dt { font-weight: 700; }
+.ringkas dd { margin: 2px 0 0; color: var(--redup); }
+
+/* ---------- Panel AJK ---------- */
+.cip { display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; margin: 12px 0; }
+.cip button { white-space: nowrap; min-height: 40px; padding: 0 14px; border-radius: 999px; border: 1.5px solid var(--garis); background: var(--kad); font-weight: 700; font-size: .9rem; cursor: pointer; }
+.cip button[aria-pressed="true"] { background: var(--dakwat); color: var(--latar); border-color: var(--dakwat); }
+.ahli-senarai { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.ahli { background: var(--kad); border: 1px solid var(--garis); border-radius: 12px; padding: 12px 14px; }
+.lencana { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.lencana span { font-size: .78rem; font-weight: 700; padding: 3px 9px; border-radius: 999px; background: var(--latar); color: var(--redup); }
+.lencana .ya { background: var(--kampus-lembut); color: var(--kampus); }
+.lencana .tunggu { background: var(--manila-lembut); color: var(--dakwat); }
+.kod-papar { font-family: var(--fon-papar); font-weight: 800; letter-spacing: .15em; }
+
+/* ---------- Dialog, toast, lain-lain ---------- */
+dialog { border: 0; border-radius: 16px; padding: 22px; width: min(92vw, 30rem); background: var(--kad); color: var(--dakwat); }
+dialog::backdrop { background: rgba(13, 22, 20, .55); }
+#toast {
+  position: fixed; left: 50%; bottom: calc(190px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%);
+  background: var(--dakwat); color: var(--latar); padding: 12px 18px; border-radius: 12px; font-weight: 700;
+  max-width: 90vw; z-index: 20; opacity: 0; pointer-events: none; transition: opacity .2s;
+}
+#toast.papar { opacity: 1; }
+#toast.ralat { background: var(--cop); color: #fff; }
+.luar-talian { background: var(--cop); color: #fff; text-align: center; font-size: .88rem; font-weight: 700; padding: 6px; }
+.memuat { display: grid; place-items: center; min-height: 60vh; color: var(--redup); gap: 16px; text-align: center; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+</style>
+</head>
+<body>
+<div id="luar-talian" class="luar-talian" hidden>Tiada sambungan internet. Data terakhir dipaparkan.</div>
+<div id="app"></div>
+<dialog id="dlg"></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+'use strict';
+
+/* ================= Konfigurasi & data tetap ================= */
+const CFG = window.CONFIG || {};
+const NEGERI = ['Johor','Kedah','Kelantan','Melaka','Negeri Sembilan','Pahang','Perak','Perlis','Pulau Pinang',
+  'Sabah','Sarawak','Selangor','Terengganu','W.P. Kuala Lumpur','W.P. Labuan','W.P. Putrajaya','Luar Negara'];
+const L = {
+  KEHADIRAN: { BOLEH: 'Boleh hadir', MUNGKIN: 'Mungkin', TIDAK: 'Tak dapat hadir' },
+  KOMITMEN: { PASTI: 'Pasti datang', MUNGKIN: 'Mungkin datang', TIDAK_PASTI: 'Belum pasti' },
+  BAJET: { BAWAH_300: 'Bawah RM300', '300_600': 'RM300 hingga RM600', '600_1000': 'RM600 hingga RM1,000', ATAS_1000: 'Atas RM1,000' },
+  PASANGAN: { YA: 'Ya', TIDAK: 'Tidak' },
+  BILIK: { TIDAK_PERLU: 'Tak perlu bilik', SINGLE: 'Bilik single', TWIN: 'Twin sharing', KELUARGA: 'Bilik keluarga' },
+  BAJU: { XS: 'XS', S: 'S', M: 'M', L: 'L', XL: 'XL', '2XL': '2XL', '3XL': '3XL', '4XL': '4XL', '5XL': '5XL' }
+};
+const HARI = ['Ahad','Isnin','Selasa','Rabu','Khamis','Jumaat','Sabtu'];
+const BLN = ['Januari','Februari','Mac','April','Mei','Jun','Julai','Ogos','September','Oktober','November','Disember'];
+const BLN3 = ['Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogo','Sep','Okt','Nov','Dis'];
+
+const IKON = {
+  utama: '<path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
+  tarikh: '<rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/>',
+  tempat: '<path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+  borang: '<rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9zM8.5 11h7M8.5 15h5"/>',
+  keputusan: '<path d="M3 20h18M6 17v-6M11 17V5M16 17v-9"/>',
+  naik: '<path d="m6 15 6-6 6 6"/>',
+  turun: '<path d="m6 9 6 6 6-6"/>',
+  tick: '<path d="m5 12.5 4.5 4.5L19 7.5"/>'
+};
+const ikon = (n, s = 22) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IKON[n]}</svg>`;
+
+/* ================= Keadaan ================= */
+const store = {
+  get(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
+  del(k) { try { localStorage.removeItem(k); } catch (e) {} }
+};
+const S = {
+  token: store.get('iku97_token'),
+  data: null, view: 'login', tab: 'utama',
+  pilihTarikh: new Set(), tiadaTarikh: false, susunTempat: [],
+  keputusan: null, admin: null, adminTapis: 'semua', adminCari: '',
+  prefill: null, daftarSelesai: null, sibuk: false, fokus: null, pasang: null, memuatK: false, memuatA: false
+};
+
+/* ================= Pembantu ================= */
+const $ = (s, el = document) => el.querySelector(s);
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const pd = s => { const [y, m, d] = String(s).split('-').map(Number); return new Date(y, (m || 1) - 1, d || 1); };
+const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
+const tarikhPanjang = s => { const d = pd(s); return `${d.getDate()} ${BLN[d.getMonth()]} ${d.getFullYear()}`; };
+
+function julat(c) {
+  const a = pd(c.mula), b = pd(c.tamat || c.mula);
+  const hari = Math.round((b - a) / 864e5) + 1;
+  let tajuk;
+  if (hari <= 1) tajuk = `${a.getDate()} ${BLN3[a.getMonth()]}`;
+  else if (a.getMonth() === b.getMonth()) tajuk = `${a.getDate()}–${b.getDate()} ${BLN3[b.getMonth()]}`;
+  else tajuk = `${a.getDate()} ${BLN3[a.getMonth()]} – ${b.getDate()} ${BLN3[b.getMonth()]}`;
+  const hariTeks = hari > 1 ? `${HARI[a.getDay()]} hingga ${HARI[b.getDay()]}, ${hari} hari` : HARI[a.getDay()];
+  return { tajuk, tahun: b.getFullYear(), hariTeks };
+}
+
+function toast(msg, jenis) {
+  const t = $('#toast');
+  t.textContent = msg;
+  t.className = 'papar' + (jenis === 'ralat' ? ' ralat' : '');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => { t.className = ''; }, 3200);
+}
+
+async function api(action, payload = {}) {
+  if (!CFG.API_URL || /PASTE|TAMPAL/.test(CFG.API_URL)) throw new Error('API_URL belum ditetapkan dalam config.js.');
+  let res;
+  try {
+    res = await fetch(CFG.API_URL, { method: 'POST', body: JSON.stringify({ action, token: S.token, ...payload }) });
+  } catch (e) {
+    throw new Error('Tiada sambungan internet. Cuba lagi sebentar.');
+  }
+  let j;
+  try { j = await res.json(); } catch (e) { throw new Error('Pelayan tidak memberi respons yang sah. Semak API_URL dan deployment.'); }
+  if (!j.ok) {
+    if (j.code === 'AUTH') keluar(true);
+    throw new Error(j.error || 'Ralat tidak diketahui.');
+  }
+  return j.data;
+}
+
+async function denganSibuk(btn, teks, fn) {
+  if (S.sibuk) return;
+  S.sibuk = true;
+  const asal = btn ? btn.innerHTML : '';
+  if (btn) { btn.disabled = true; btn.textContent = teks; }
+  try { return await fn(); }
+  finally {
+    S.sibuk = false;
+    if (btn && document.body.contains(btn)) { btn.disabled = false; btn.innerHTML = asal; }
+  }
+}
+
+function waPautan(tel, mesej) {
+  return `https://wa.me/6${String(tel).replace(/\D/g, '').replace(/^6?0/, '0')}?text=${encodeURIComponent(mesej)}`;
+}
+
+/* ================= Muat & draf ================= */
+function initDraf() {
+  const d = S.data;
+  const ut = d.undianSaya.tarikh || [];
+  S.tiadaTarikh = ut.includes('TIADA');
+  S.pilihTarikh = new Set(ut.filter(x => x !== 'TIADA'));
+  const ids = d.calonTempat.map(c => c.id);
+  const simpan = (d.undianSaya.tempat || []).filter(p => ids.includes(p.id)).map(p => ({ ...p }));
+  const tiada = ids.filter(id => !simpan.some(p => p.id === id)).map(id => ({ id, kehadiran: '' }));
+  S.susunTempat = simpan.concat(tiada);
+}
+
+async function muat() {
+  try {
+    S.data = await api('muat');
+    store.set('iku97_data', S.data);
+    initDraf();
+    render();
+  } catch (e) {
+    if (!S.token) return;
+    if (S.data) { render(); toast(e.message, 'ralat'); }
+    else $('#app').innerHTML = `<main class="wrap"><div class="memuat"><p>${esc(e.message)}</p><button class="btn utama" data-act="cubaLagi">Cuba lagi</button></div></main>`;
+  }
+}
+
+function keluar(senyap) {
+  store.del('iku97_token'); store.del('iku97_data');
+  Object.assign(S, { token: null, data: null, view: 'login', tab: 'utama', keputusan: null, admin: null });
+  render();
+  if (!senyap) toast('Anda telah log keluar.');
+}
+
+/* ================= Paparan ================= */
+const cop = saiz => `<div class="cop ${saiz}" aria-hidden="true"><b>30</b><small>tahun</small></div>`;
+
+function vLogin() {
+  const p = S.prefill || {};
+  return `<main class="wrap masuk">
+    <div class="hero">
+      ${cop('besar')}
+      <h1>Reunion IKU Bangsar</h1>
+      <p class="sub">Batch 1/97. Kita mendaftar pada 1997, dan berkumpul semula pada 2027.</p>
+    </div>
+    <form class="panel" data-form="login" novalidate>
+      <label class="medan"><span>Nombor telefon</span>
+        <input name="telefon" type="tel" inputmode="tel" autocomplete="tel" placeholder="0123456789" value="${esc(p.telefon || '')}" required></label>
+      <label class="medan"><span>Kod akses</span>
+        <input name="kod" type="text" class="kod" maxlength="6" autocomplete="one-time-code" autocapitalize="characters" spellcheck="false" placeholder="ABC123" value="${esc(p.kod || '')}" required>
+        <small>6 aksara dalam mesej jemputan WhatsApp daripada AJK.</small></label>
+      <button class="btn utama" type="submit">Log masuk</button>
+      <p class="ralat" id="ralat" role="alert"></p>
+    </form>
+    <p class="nota">Belum terima kod akses? <button class="pautan" data-act="ke" data-view="daftar">Daftar sebagai alumni</button>, dan AJK akan sahkan pendaftaran anda.</p>
+  </main>`;
+}
+
+function vDaftar() {
+  if (S.daftarSelesai) {
+    const d = S.daftarSelesai;
+    return `<main class="wrap masuk">
+      <div class="hero">${cop('besar')}<h1>Pendaftaran dihantar</h1>
+      <p class="sub">Terima kasih, ${esc(d.nama)}. AJK akan semak nama anda dalam senarai batch dan hantar kod akses melalui WhatsApp.</p></div>
+      <div class="baris-butang">
+        ${d.noWaAjk ? `<a class="btn wa" href="${waPautan(d.noWaAjk, `Salam AJK, saya ${d.nama} (Batch 1/97) baru mendaftar dalam app reunion. Mohon semakan.`)}" target="_blank" rel="noopener">Maklumkan AJK di WhatsApp</a>` : ''}
+        <button class="btn" data-act="ke" data-view="login">Kembali ke log masuk</button>
+      </div></main>`;
+  }
+  return `<main class="wrap masuk">
+    <div class="kepala"><h1>Daftar alumni</h1>
+    <p>Untuk rakan Batch 1/97 yang belum terima jemputan. AJK akan sahkan dan hantar kod akses.</p></div>
+    <form class="panel" data-form="daftar" novalidate>
+      <label class="medan"><span>Nama penuh</span><input name="nama" type="text" autocomplete="name" required></label>
+      <label class="medan"><span>Nombor telefon (WhatsApp)</span><input name="telefon" type="tel" inputmode="tel" autocomplete="tel" placeholder="0123456789" required></label>
+      <label class="medan"><span>Negeri bertugas atau menetap</span>
+        <select name="negeri" required><option value="">Pilih negeri</option>${NEGERI.map(n => `<option>${n}</option>`).join('')}</select></label>
+      <label class="medan"><span>Jawatan atau tempat bertugas</span><input name="jawatan" type="text" placeholder="Contoh: PPKP, PKD Kota Belud"><small>Pilihan. Membantu AJK mengesahkan anda.</small></label>
+      <label class="medan"><span>Emel</span><input name="emel" type="email" autocomplete="email"><small>Pilihan.</small></label>
+      <button class="btn utama" type="submit">Hantar pendaftaran</button>
+      <p class="ralat" id="ralat" role="alert"></p>
+    </form>
+    <p class="nota">Dah ada kod akses? <button class="pautan" data-act="ke" data-view="login">Log masuk</button></p>
+    <p class="nota"><small>Maklumat anda hanya digunakan oleh AJK untuk urusan reunion ini.</small></p>
+  </main>`;
+}
+
+function statusUndi() {
+  const d = S.data, t = d.tetapan;
+  if (!d.undianDibuka) return 'Undian sudah ditutup. Keputusan akan diumumkan oleh AJK.';
+  if (!t.tarikhTutup) return 'Undian sedang dibuka.';
+  const akhir = pd(t.tarikhTutup); akhir.setHours(23, 59, 59);
+  const n = Math.ceil((akhir - new Date()) / 864e5);
+  return n <= 1 ? `Hari ini hari terakhir untuk mengundi (${tarikhPanjang(t.tarikhTutup)}).`
+    : `Undian dibuka hingga ${tarikhPanjang(t.tarikhTutup)}. Tinggal ${n} hari lagi.`;
+}
+
+function kiraSiap() {
+  const d = S.data;
+  return { tarikh: d.undianSaya.tarikh.length > 0, tempat: d.undianSaya.tempat.length > 0, borang: !!d.kajiSelidik };
+}
+
+function vUtama() {
+  const d = S.data, me = d.me, t = d.tetapan, siap = kiraSiap();
+  const tugas = [
+    ['tarikh', 'Undi tarikh', 'Tandakan semua tarikh yang anda boleh hadir'],
+    ['tempat', 'Undi tempat', 'Susun lokasi ikut pilihan anda'],
+    ['borang', 'Isi kaji selidik', 'Bajet, penginapan dan saiz baju']
+  ];
+  const bil = Object.values(siap).filter(Boolean).length;
+  return `
+  <section class="kad-matrik" aria-label="Kad alumni">
+    <div class="jalur" aria-hidden="true"><span>IKU Bangsar</span><span>1997</span></div>
+    <div class="isi">
+      <p class="jenis">Kad Alumni Batch 1/97</p>
+      <h1 class="nama">${esc(me.nama)}</h1>
+      <dl>
+        <div><dt>No. ahli</dt><dd>${esc(me.id)}</dd></div>
+        <div><dt>Negeri</dt><dd>${esc(me.negeri || 'Belum diisi')}</dd></div>
+      </dl>
+    </div>
+    ${cop('kecil')}
+  </section>
+  <button class="pautan" data-act="profil">Kemas kini profil</button>
+  ${t.mesejAluan ? `<p class="aluan">${esc(t.mesejAluan)}</p>` : ''}
+  <p class="status-undi">${statusUndi()}</p>
+  <h2>Langkah anda<span class="kiraan">${bil} daripada 3 selesai</span></h2>
+  <ol class="tugas">
+    ${tugas.map(([k, tj, ket], i) => `<li><button data-act="tab" data-tab="${k}" class="${siap[k] ? 'siap' : ''}">
+      <span class="no">${siap[k] ? ikon('tick', 20) : i + 1}</span>
+      <span><b>${tj}</b><small>${ket}</small></span>
+      <span class="tanda">${siap[k] ? 'Selesai' : 'Belum'}</span></button></li>`).join('')}
+  </ol>
+  <div class="lain">
+    ${S.pasang ? `<button class="btn" data-act="pasang">Pasang app di telefon</button>` : ''}
+    ${me.admin ? `<button class="btn" data-act="tab" data-tab="admin">Buka panel AJK</button>` : ''}
+    ${t.noWaAjk ? `<a class="pautan" href="${waPautan(t.noWaAjk, `Salam AJK, saya ${me.nama} (Batch 1/97). Saya ada pertanyaan tentang reunion.`)}" target="_blank" rel="noopener">Tanya AJK di WhatsApp</a>` : ''}
+    <button class="pautan" data-act="keluar">Log keluar</button>
+  </div>`;
+}
+
+function barSimpan(act, label, lumpuh, status) {
+  return `<div class="bar-simpan"><div><p>${status}</p>
+    <button class="btn utama" data-act="${act}" ${lumpuh ? 'disabled' : ''}>${label}</button></div></div>`;
+}
+
+function samaSet(a, b) { return a.length === b.length && a.every(x => b.includes(x)); }
+
+function vTarikh() {
+  const d = S.data, buka = d.undianDibuka, bil = S.pilihTarikh.size;
+  const draf = S.tiadaTarikh ? ['TIADA'] : [...S.pilihTarikh];
+  const simpan = d.undianSaya.tarikh;
+  const status = !simpan.length ? 'Undian anda belum dihantar.'
+    : samaSet(draf, simpan) ? 'Undian anda sudah disimpan. Anda boleh ubah sebelum undian ditutup.'
+    : 'Ada perubahan yang belum disimpan.';
+  const baris = d.calonTarikh.map(c => {
+    const j = julat(c), on = S.pilihTarikh.has(c.id);
+    return `<li><button class="pilih-tarikh" role="checkbox" aria-checked="${on}" data-act="togolTarikh" data-id="${esc(c.id)}" data-fk="t-${esc(c.id)}" ${buka ? '' : 'disabled'}>
+      <span class="tarikh-blok"><b>${j.tajuk}</b><small>${j.tahun}</small></span>
+      <span class="tarikh-isi"><b>${esc(c.label)}</b><small>${j.hariTeks}</small>${c.catatan ? `<small class="catatan">${esc(c.catatan)}</small>` : ''}</span>
+      <span class="kotak">${on ? ikon('tick', 18) : ''}</span></button></li>`;
+  }).join('');
+  return `<header class="kepala"><h1>Bila anda boleh hadir?</h1>
+    <p>Tandakan semua tarikh yang anda boleh hadir, bukan satu sahaja. Tarikh yang paling ramai boleh hadir akan dipilih.</p></header>
+    ${buka ? '' : '<p class="amaran">Undian sudah ditutup. Pilihan anda dipaparkan untuk rujukan.</p>'}
+    <ul class="senarai-pilih">${baris}
+      <li><button class="pilih-tarikh tiada" role="checkbox" aria-checked="${S.tiadaTarikh}" data-act="togolTiada" data-fk="t-tiada" ${buka ? '' : 'disabled'}>
+        <span class="tarikh-isi"><b>Tiada tarikh yang sesuai</b><small>AJK akan hubungi anda untuk cadangan lain.</small></span>
+        <span class="kotak">${S.tiadaTarikh ? ikon('tick', 18) : ''}</span></button></li>
+    </ul>
+    ${buka ? barSimpan('simpanTarikh',
+      bil ? `Simpan undian (${bil} tarikh)` : S.tiadaTarikh ? 'Simpan undian' : 'Pilih sekurang-kurangnya satu',
+      !(bil || S.tiadaTarikh), status) : ''}`;
+}
+
+function vTempat() {
+  const d = S.data, buka = d.undianDibuka;
+  const cari = id => d.calonTempat.find(c => c.id === id) || { nama: id, lokasi: '', catatan: '' };
+  const lengkap = S.susunTempat.length > 0 && S.susunTempat.every(p => p.kehadiran);
+  const simpan = d.undianSaya.tempat;
+  const sama = simpan.length === S.susunTempat.length &&
+    simpan.every((p, i) => p.id === S.susunTempat[i].id && p.kehadiran === S.susunTempat[i].kehadiran);
+  const status = !simpan.length ? 'Undian anda belum dihantar.'
+    : sama ? 'Undian anda sudah disimpan. Anda boleh ubah sebelum undian ditutup.'
+    : 'Ada perubahan yang belum disimpan.';
+  const n = S.susunTempat.length;
+  const item = S.susunTempat.map((p, i) => {
+    const c = cari(p.id);
+    return `<li class="tempat">
+      <div class="baris-atas">
+        <span class="kedudukan" aria-label="Pilihan ke-${i + 1}">${i + 1}</span>
+        <div><b>${esc(c.nama)}</b><small>${esc(c.lokasi)}</small>${c.catatan ? `<small class="catatan">${esc(c.catatan)}</small>` : ''}</div>
+        <div class="gerak">
+          <button data-act="naik" data-i="${i}" data-fk="n-${esc(p.id)}" aria-label="Naikkan ${esc(c.nama)}" ${i === 0 || !buka ? 'disabled' : ''}>${ikon('naik')}</button>
+          <button data-act="turun" data-i="${i}" data-fk="u-${esc(p.id)}" aria-label="Turunkan ${esc(c.nama)}" ${i === n - 1 || !buka ? 'disabled' : ''}>${ikon('turun')}</button>
+        </div>
+      </div>
+      <div class="segmen" role="radiogroup" aria-label="Kehadiran jika di ${esc(c.nama)}">
+        ${Object.keys(L.KEHADIRAN).map(k => `<button role="radio" aria-checked="${p.kehadiran === k}" class="h-${k.toLowerCase()}" data-act="hadir" data-i="${i}" data-k="${k}" data-fk="h-${esc(p.id)}-${k}" ${buka ? '' : 'disabled'}>${L.KEHADIRAN[k]}</button>`).join('')}
+      </div></li>`;
+  }).join('');
+  return `<header class="kepala"><h1>Di mana kita patut berkumpul?</h1>
+    <p>Susun lokasi ikut pilihan anda, paling atas ialah pilihan pertama. Kemudian nyatakan sama ada anda boleh hadir jika reunion diadakan di situ.</p></header>
+    ${buka ? '' : '<p class="amaran">Undian sudah ditutup. Pilihan anda dipaparkan untuk rujukan.</p>'}
+    <ol class="senarai-pilih" style="list-style:none;padding:0">${item}</ol>
+    ${buka ? barSimpan('simpanTempat', lengkap ? 'Simpan undian tempat' : 'Pilih kehadiran bagi setiap tempat', !lengkap, status) : ''}`;
+}
+
+function radio(nama, peta, nilai) {
+  return `<div class="pil">${Object.entries(peta).map(([k, v]) =>
+    `<label><input type="radio" name="${nama}" value="${esc(k)}" ${nilai === k ? 'checked' : ''}><span>${esc(v)}</span></label>`).join('')}</div>`;
+}
+
+function vBorang() {
+  const k = S.data.kajiSelidik || {};
+  return `<header class="kepala"><h1>Kaji selidik ringkas</h1>
+    <p>Jawapan anda membantu AJK memilih hotel, menetapkan harga pakej dan menempah baju. Anda boleh kemas kini bila-bila masa.</p></header>
+    <form data-form="kaji" novalidate>
+      <fieldset><legend>Sejauh mana anda merancang untuk hadir?</legend>${radio('komitmen', L.KOMITMEN, k.komitmen)}</fieldset>
+      <fieldset><legend>Bajet seorang untuk penginapan dan majlis</legend>
+        <small>Tidak termasuk tiket kapal terbang atau kos perjalanan.</small>${radio('bajet', L.BAJET, k.bajet)}</fieldset>
+      <fieldset><legend>Bawa pasangan?</legend>${radio('bawaPasangan', L.PASANGAN, k.bawaPasangan)}</fieldset>
+      <fieldset><legend>Bilangan anak yang ikut</legend>
+        <div class="pengira">
+          <button type="button" data-act="anak" data-d="-1" aria-label="Kurangkan">−</button>
+          <input type="number" name="bilAnak" min="0" max="10" value="${Number(k.bilAnak) || 0}" aria-label="Bilangan anak">
+          <button type="button" data-act="anak" data-d="1" aria-label="Tambah">+</button>
+        </div></fieldset>
+      <fieldset><legend>Penginapan yang anda perlukan</legend>${radio('jenisBilik', L.BILIK, k.jenisBilik)}</fieldset>
+      <fieldset><legend>Saiz baju reunion</legend>${radio('saizBaju', L.BAJU, k.saizBaju)}</fieldset>
+      <label class="medan"><span>Cadangan aktiviti</span>
+        <textarea name="cadangan" maxlength="500" placeholder="Contoh: lawatan ke IKU, tahlil untuk rakan yang telah pergi, sukaneka">${esc(k.cadangan || '')}</textarea></label>
+      <label class="medan"><span>Catatan lain untuk AJK</span>
+        <textarea name="catatan" maxlength="500">${esc(k.catatan || '')}</textarea></label>
+      <p class="ralat" id="ralat" role="alert"></p>
+      <button class="btn utama" type="submit">Simpan kaji selidik</button>
+    </form>`;
+}
+
+function vKeputusan() {
+  const k = S.keputusan;
+  if (!k) { if (!S.memuatK) setTimeout(() => muatKeputusan(), 0); return `<div class="memuat"><p>Mengira undian terkini…</p></div>`; }
+  if (k.tersembunyi) return `<header class="kepala"><h1>Keputusan</h1>
+    <p>AJK akan umumkan keputusan selepas undian ditutup. Terima kasih kerana mengundi.</p></header>`;
+  const st = k.statistik, d = S.data;
+  const maksT = Math.max(1, st.undiTarikh);
+  const nTempat = k.tempat.length;
+  const masa = new Date(k.dikemaskini).toLocaleTimeString('ms-MY', { hour: '2-digit', minute: '2-digit' });
+  const kiraTeks = (obj, peta) => Object.keys(peta).filter(x => obj[x]).map(x => `${peta[x]} ${obj[x]}`).join(', ') || 'Belum ada jawapan';
+
+  const tarikh = k.tarikh.map(c => {
+    const j = julat(c);
+    return `<li class="hasil">
+      <div class="hasil-atas"><b>${j.tajuk} ${j.tahun}</b><span>${c.jumlah} boleh hadir</span></div>
+      <small>${esc(c.label)}</small>
+      <div class="palang" role="img" aria-label="${c.jumlah} boleh hadir, ${c.pasti} pasti datang">
+        <i style="width:${pct(c.jumlah, maksT)}%"></i><i class="depan" style="width:${pct(c.pasti, maksT)}%"></i></div>
+      <small>${c.pasti} pasti datang. ${c.borneo} dari Sabah, Sarawak dan Labuan.</small></li>`;
+  }).join('');
+
+  const tempat = k.tempat.map((c, i) => {
+    const jum = c.boleh + c.mungkin + c.tidak;
+    return `<li class="hasil">
+      <div class="hasil-atas"><b>${i + 1}. ${esc(c.nama)}</b><span>${c.skor} mata</span></div>
+      <small>${esc(c.lokasi)}. ${c.pilihanPertama} orang letak sebagai pilihan pertama.</small>
+      <div class="palang"><i class="depan" style="width:${pct(c.skor, k.maksSkor)}%"></i></div>
+      <div class="tindan" role="img" aria-label="${c.boleh} boleh hadir, ${c.mungkin} mungkin, ${c.tidak} tak dapat hadir">
+        <i style="width:${pct(c.boleh, jum)}%"></i><i style="width:${pct(c.mungkin, jum)}%"></i><i style="width:${pct(c.tidak, jum)}%"></i></div>
+      <small>${c.boleh} boleh hadir, ${c.mungkin} mungkin, ${c.tidak} tak dapat hadir</small>
+      ${c.borneoTidak ? `<span class="amaran-kecil">${c.borneoTidak} rakan dari Sabah atau Sarawak tak dapat hadir jika di sini</span>` : ''}</li>`;
+  }).join('');
+
+  return `<header class="kepala"><h1>Keputusan semasa</h1>
+    <p>${st.undiTarikh} daripada ${st.alumni} alumni berdaftar sudah mengundi tarikh, dan ${st.undiTempat} sudah mengundi tempat.
+    ${st.borneo} alumni berdaftar dari Sabah, Sarawak dan Labuan.</p>
+    <small>Dikemas kini ${masa}.</small>
+    <div class="baris-butang"><button class="btn kecil" data-act="muatKeputusan">Muat semula</button></div></header>
+    <h2>Tarikh</h2>
+    ${st.undiTarikh ? `<ul class="hasil-senarai">${tarikh}</ul>` : '<p>Belum ada undian tarikh.</p>'}
+    <h2>Tempat</h2>
+    <p><small>Pilihan pertama mendapat ${nTempat} mata, pilihan terakhir mendapat 1 mata.</small></p>
+    ${st.undiTempat ? `<ul class="hasil-senarai">${tempat}</ul>` : '<p>Belum ada undian tempat.</p>'}
+    <h2>Kaji selidik</h2>
+    <p><small>${st.kajiSelidik} jawapan diterima.</small></p>
+    <dl class="ringkas">
+      <div><dt>Komitmen</dt><dd>${kiraTeks(k.kaji.komitmen, L.KOMITMEN)}</dd></div>
+      <div><dt>Bajet seorang</dt><dd>${kiraTeks(k.kaji.bajet, L.BAJET)}</dd></div>
+      <div><dt>Penginapan</dt><dd>${kiraTeks(k.kaji.bilik, L.BILIK)}</dd></div>
+      <div><dt>Keluarga</dt><dd>${k.kaji.pasangan} akan bawa pasangan, ${k.kaji.anak} anak akan ikut</dd></div>
+      <div><dt>Saiz baju</dt><dd>${kiraTeks(k.kaji.baju, L.BAJU)}</dd></div>
+    </dl>
+    ${d.undianDibuka && !kiraSiap().tarikh ? `<div class="baris-butang"><button class="btn utama" data-act="tab" data-tab="tarikh">Undi tarikh sekarang</button></div>` : ''}`;
+}
+
+/* ---------- Panel AJK ---------- */
+const TAPIS = {
+  semua: ['Semua', () => true],
+  menunggu: ['Menunggu kelulusan', a => a.status === 'PENDING'],
+  belumMasuk: ['Belum log masuk', a => a.status === 'AKTIF' && !a.logMasuk],
+  belumSiap: ['Belum lengkap', a => a.status === 'AKTIF' && a.logMasuk && !(a.undiTarikh && a.undiTempat && a.kajiSelidik)],
+  siap: ['Lengkap', a => a.undiTarikh && a.undiTempat && a.kajiSelidik]
+};
+
+function vAdmin() {
+  if (!S.admin) { if (!S.memuatA) setTimeout(() => muatAdmin(), 0); return `<div class="memuat"><p>Memuatkan senarai alumni…</p></div>`; }
+  const al = S.admin.alumni;
+  const aktif = al.filter(a => a.status === 'AKTIF');
+  return `<div class="baris-butang" style="margin-top:0"><button class="pautan" data-act="tab" data-tab="utama">Kembali ke halaman utama</button></div>
+    <header class="kepala"><h1>Panel AJK</h1>
+      <p>${aktif.length} alumni aktif. ${aktif.filter(a => a.logMasuk).length} sudah log masuk, ${aktif.filter(TAPIS.siap[1]).length} lengkap semua langkah, ${al.filter(TAPIS.menunggu[1]).length} menunggu kelulusan.</p>
+      <div class="baris-butang"><button class="btn kecil" data-act="muatAdmin">Muat semula</button></div></header>
+    <label class="medan"><span class="sr">Cari alumni</span><input type="search" data-in="cari" placeholder="Cari nama, negeri atau telefon" value="${esc(S.adminCari)}"></label>
+    <div class="cip" role="group" aria-label="Tapis senarai">
+      ${Object.entries(TAPIS).map(([k, [lbl, f]]) => `<button data-act="tapis" data-k="${k}" aria-pressed="${S.adminTapis === k}">${lbl} (${al.filter(f).length})</button>`).join('')}
+    </div>
+    <ul class="ahli-senarai" id="admin-list"></ul>`;
+}
+
+function appUrl() {
+  const u = (S.admin && S.admin.appUrl) || CFG.APP_URL || '';
+  return (u && !/USERNAME/.test(u)) ? u.replace(/\/?$/, '/') : location.origin + location.pathname;
+}
+function mesejJemputan(a) {
+  return `Assalamualaikum & salam sejahtera ${a.nama}!\n\nKami sedang merancang ${S.admin.namaAcara || 'Reunion 30 Tahun IKU Bangsar Batch 1/97'}. Sila undi tarikh dan tempat yang sesuai untuk anda:\n\n${appUrl()}?p=${a.telefon}&k=${a.kod}\n\nKod akses anda: ${a.kod}\nTerima kasih!`;
+}
+function mesejPeringatan(a) {
+  const belum = [!a.undiTarikh && 'undi tarikh', !a.undiTempat && 'undi tempat', !a.kajiSelidik && 'kaji selidik'].filter(Boolean);
+  return `Salam ${a.nama}, peringatan mesra dari AJK Reunion IKU 1/97. Anda belum lengkapkan ${belum.join(', ')}. Hanya 2 minit:\n\n${appUrl()}?p=${a.telefon}&k=${a.kod}\n\nTerima kasih!`;
+}
+
+function renderAdminList() {
+  const el = $('#admin-list');
+  if (!el || !S.admin) return;
+  const q = S.adminCari.trim().toLowerCase();
+  const senarai = S.admin.alumni.filter(TAPIS[S.adminTapis][1])
+    .filter(a => !q || `${a.nama} ${a.negeri} ${a.telefon}`.toLowerCase().includes(q));
+  if (!senarai.length) { el.innerHTML = '<li><p>Tiada alumni dalam kategori ini.</p></li>'; return; }
+  el.innerHTML = senarai.map(a => {
+    let tindakan = '';
+    if (a.status === 'PENDING') {
+      tindakan = `<button class="btn kecil" data-act="luluskan" data-id="${esc(a.id)}">Luluskan</button>
+        <button class="btn kecil" data-act="tolak" data-id="${esc(a.id)}">Tolak</button>`;
+    } else if (a.status === 'AKTIF' && a.kod) {
+      const lengkap = a.undiTarikh && a.undiTempat && a.kajiSelidik;
+      if (!a.logMasuk) tindakan = `<a class="btn kecil wa" href="${waPautan(a.telefon, mesejJemputan(a))}" target="_blank" rel="noopener">Hantar jemputan</a>`;
+      else if (!lengkap) tindakan = `<a class="btn kecil wa" href="${waPautan(a.telefon, mesejPeringatan(a))}" target="_blank" rel="noopener">Hantar peringatan</a>`;
+      tindakan += `<button class="btn kecil" data-act="salin" data-kod="${esc(a.kod)}">Salin kod <span class="kod-papar">${esc(a.kod)}</span></button>`;
+    } else if (a.status === 'AKTIF') {
+      tindakan = '<small>Tiada kod. Jalankan menu "Jana kod akses" dalam Sheets.</small>';
+    }
+    const lenc = (ok, t) => `<span class="${ok ? 'ya' : ''}">${t}${ok ? ' selesai' : ''}</span>`;
+    return `<li class="ahli">
+      <b>${esc(a.nama)}</b>${a.peranan === 'ADMIN' ? ' <small style="display:inline">(AJK)</small>' : ''}
+      <small>${esc(a.negeri || 'Negeri tidak diisi')}, ${esc(a.telefon)}</small>
+      <div class="lencana">
+        ${a.status !== 'AKTIF' ? `<span class="tunggu">${a.status === 'PENDING' ? 'Menunggu kelulusan' : esc(a.status)}</span>` : ''}
+        ${a.status === 'AKTIF' ? `<span class="${a.logMasuk ? 'ya' : ''}">${a.logMasuk ? 'Pernah log masuk' : 'Belum log masuk'}</span>
+          ${lenc(a.undiTarikh, 'Tarikh')}${lenc(a.undiTempat, 'Tempat')}${lenc(a.kajiSelidik, 'Kaji selidik')}` : ''}
+      </div>
+      ${tindakan ? `<div class="baris-butang">${tindakan}</div>` : ''}
+    </li>`;
+  }).join('');
+}
+
+/* ---------- Navigasi ---------- */
+function vNav() {
+  const siap = kiraSiap();
+  const item = [['utama', 'Utama'], ['tarikh', 'Tarikh'], ['tempat', 'Tempat'], ['borang', 'Borang'], ['keputusan', 'Keputusan']];
+  return `<nav class="nav" aria-label="Navigasi utama"><ul>${item.map(([k, l]) =>
+    `<li><button data-act="tab" data-tab="${k}" ${S.tab === k ? 'aria-current="page"' : ''}>${ikon(k)}<span>${l}</span>
+      ${(k in siap && !siap[k] && S.data.undianDibuka) ? '<span class="titik" aria-label="belum selesai"></span>' : ''}</button></li>`).join('')}</ul></nav>`;
+}
+
+function render() {
+  const app = $('#app');
+  if (!S.token) { app.innerHTML = S.view === 'daftar' ? vDaftar() : vLogin(); return; }
+  if (!S.data) { app.innerHTML = `<main class="wrap"><div class="memuat">${cop('besar')}<p>Memuatkan…</p></div></main>`; return; }
+  const peta = { utama: vUtama, tarikh: vTarikh, tempat: vTempat, borang: vBorang, keputusan: vKeputusan, admin: vAdmin };
+  app.innerHTML = `<main class="wrap">${(peta[S.tab] || vUtama)()}</main>${S.tab === 'admin' ? '' : vNav()}`;
+  if (S.tab === 'admin') renderAdminList();
+  if (S.fokus) {
+    const f = document.querySelector(`[data-fk="${S.fokus}"]`);
+    if (f && !f.disabled) f.focus({ preventScroll: true });
+    S.fokus = null;
+  }
+}
+
+/* ================= Tindakan ================= */
+async function muatKeputusan(btn) {
+  if (S.memuatK) return;
+  S.memuatK = true;
+  if (btn) { btn.disabled = true; btn.textContent = 'Memuatkan…'; }
+  try {
+    S.keputusan = await api('keputusan');
+    if (S.tab === 'keputusan') render();
+  } catch (e) {
+    toast(e.message, 'ralat');
+    if (!S.keputusan && S.tab === 'keputusan') {
+      $('#app main').innerHTML = `<div class="memuat"><p>${esc(e.message)}</p><button class="btn utama" data-act="muatKeputusan">Cuba lagi</button></div>`;
+    }
+  } finally {
+    S.memuatK = false;
+    if (btn && document.body.contains(btn)) { btn.disabled = false; btn.textContent = 'Muat semula'; }
+  }
+}
+
+async function muatAdmin(btn) {
+  if (S.memuatA) return;
+  S.memuatA = true;
+  if (btn) { btn.disabled = true; btn.textContent = 'Memuatkan…'; }
+  try {
+    S.admin = await api('panelAdmin');
+    if (S.tab === 'admin') render();
+  } catch (e) {
+    toast(e.message, 'ralat');
+    if (!S.admin && S.tab === 'admin') {
+      $('#app main').innerHTML = `<div class="memuat"><p>${esc(e.message)}</p><button class="btn utama" data-act="tab" data-tab="utama">Kembali</button></div>`;
+    }
+  } finally {
+    S.memuatA = false;
+    if (btn && document.body.contains(btn)) { btn.disabled = false; btn.textContent = 'Muat semula'; }
+  }
+}
+
+const ACT = {
+  ke(b) { S.view = b.dataset.view; S.daftarSelesai = null; render(); scrollTo(0, 0); },
+  tab(b) {
+    S.tab = b.dataset.tab;
+    if (S.tab === 'keputusan') S.keputusan = null;
+    render(); scrollTo(0, 0);
+  },
+  cubaLagi() { muat(); },
+  keluar() { if (confirm('Log keluar dari app ini?')) keluar(); },
+
+  togolTarikh(b) {
+    const id = b.dataset.id;
+    S.pilihTarikh.has(id) ? S.pilihTarikh.delete(id) : S.pilihTarikh.add(id);
+    if (S.pilihTarikh.size) S.tiadaTarikh = false;
+    S.fokus = b.dataset.fk; render();
+  },
+  togolTiada(b) {
+    S.tiadaTarikh = !S.tiadaTarikh;
+    if (S.tiadaTarikh) S.pilihTarikh.clear();
+    S.fokus = b.dataset.fk; render();
+  },
+  async simpanTarikh(b) {
+    try {
+      await denganSibuk(b, 'Menyimpan…', async () => {
+        const r = await api('undiTarikh', { tarikhIds: [...S.pilihTarikh] });
+        S.data.undianSaya.tarikh = r.tarikh;
+        store.set('iku97_data', S.data);
+      });
+      render(); toast('Undian tarikh disimpan.');
+    } catch (e) { toast(e.message, 'ralat'); }
+  },
+
+  naik(b) { const i = +b.dataset.i; if (i > 0) { const a = S.susunTempat; [a[i - 1], a[i]] = [a[i], a[i - 1]]; } S.fokus = b.dataset.fk; render(); },
+  turun(b) { const i = +b.dataset.i, a = S.susunTempat; if (i < a.length - 1) [a[i + 1], a[i]] = [a[i], a[i + 1]]; S.fokus = b.dataset.fk; render(); },
+  hadir(b) { S.susunTempat[+b.dataset.i].kehadiran = b.dataset.k; S.fokus = b.dataset.fk; render(); },
+  async simpanTempat(b) {
+    try {
+      await denganSibuk(b, 'Menyimpan…', async () => {
+        const r = await api('undiTempat', { pilihan: S.susunTempat });
+        S.data.undianSaya.tempat = r.tempat;
+        store.set('iku97_data', S.data);
+      });
+      render(); toast('Undian tempat disimpan.');
+    } catch (e) { toast(e.message, 'ralat'); }
+  },
+
+  anak(b) {
+    const inp = $('input[name=bilAnak]');
+    inp.value = Math.max(0, Math.min(10, (parseInt(inp.value, 10) || 0) + Number(b.dataset.d)));
+  },
+
+  muatKeputusan(b) { muatKeputusan(b); },
+  muatAdmin(b) { muatAdmin(b); },
+  tapis(b) { S.adminTapis = b.dataset.k; render(); },
+  async luluskan(b) {
+    try {
+      await denganSibuk(b, 'Meluluskan…', async () => {
+        const r = await api('luluskan', { id: b.dataset.id });
+        const a = S.admin.alumni.find(x => x.id === r.id);
+        Object.assign(a, { status: 'AKTIF', kod: r.kod });
+      });
+      render(); toast('Diluluskan. Tekan "Hantar jemputan" untuk hantar kod.');
+    } catch (e) { toast(e.message, 'ralat'); }
+  },
+  async tolak(b) {
+    if (!confirm('Tolak pendaftaran ini?')) return;
+    try {
+      await denganSibuk(b, 'Memproses…', async () => {
+        const r = await api('tolak', { id: b.dataset.id });
+        S.admin.alumni.find(x => x.id === r.id).status = 'DITOLAK';
+      });
+      render(); toast('Pendaftaran ditolak.');
+    } catch (e) { toast(e.message, 'ralat'); }
+  },
+  async salin(b) {
+    try { await navigator.clipboard.writeText(b.dataset.kod); toast('Kod disalin.'); }
+    catch (e) { toast('Kod: ' + b.dataset.kod); }
+  },
+
+  profil() {
+    const me = S.data.me, dlg = $('#dlg');
+    dlg.innerHTML = `<form data-form="profil" novalidate>
+      <h2 style="margin-top:0">Kemas kini profil</h2>
+      <label class="medan"><span>Nama penuh</span><input name="nama" type="text" value="${esc(me.nama)}" required></label>
+      <label class="medan"><span>Negeri bertugas atau menetap</span><select name="negeri">
+        ${NEGERI.map(n => `<option ${n === me.negeri ? 'selected' : ''}>${n}</option>`).join('')}</select></label>
+      <label class="medan"><span>Jawatan atau tempat bertugas</span><input name="jawatan" type="text" value="${esc(me.jawatan)}"></label>
+      <label class="medan"><span>Emel</span><input name="emel" type="email" value="${esc(me.emel)}"></label>
+      <p><small>Nombor telefon ${esc(me.telefon)} digunakan untuk log masuk. Hubungi AJK untuk menukarnya.</small></p>
+      <p class="ralat" id="ralat-profil" role="alert"></p>
+      <div class="baris-butang"><button class="btn utama" type="submit">Simpan profil</button>
+      <button class="btn" type="button" data-act="tutupDlg">Batal</button></div></form>`;
+    dlg.showModal();
+  },
+  tutupDlg() { $('#dlg').close(); },
+  async pasang() {
+    if (!S.pasang) return;
+    S.pasang.prompt();
+    await S.pasang.userChoice;
+    S.pasang = null; render();
+  }
+};
+
+const BORANG = {
+  async login(f, btn) {
+    const fd = new FormData(f), ralat = $('#ralat');
+    ralat.textContent = '';
+    try {
+      await denganSibuk(btn, 'Menyemak…', async () => {
+        const r = await api('login', { telefon: fd.get('telefon'), kod: String(fd.get('kod')).trim().toUpperCase() });
+        S.token = r.token; store.set('iku97_token', r.token);
+        S.tab = 'utama'; S.prefill = null;
+      });
+      render(); await muat();
+    } catch (e) { ralat.textContent = e.message; }
+  },
+  async daftar(f, btn) {
+    const fd = Object.fromEntries(new FormData(f)), ralat = $('#ralat');
+    ralat.textContent = '';
+    if (!fd.nama || !fd.telefon || !fd.negeri) { ralat.textContent = 'Isi nama, nombor telefon dan negeri.'; return; }
+    try {
+      await denganSibuk(btn, 'Menghantar…', async () => {
+        const r = await api('daftar', fd);
+        S.daftarSelesai = { nama: fd.nama, noWaAjk: r.noWaAjk };
+      });
+      render(); scrollTo(0, 0);
+    } catch (e) { ralat.textContent = e.message; }
+  },
+  async kaji(f, btn) {
+    const fd = Object.fromEntries(new FormData(f)), ralat = $('#ralat');
+    const wajib = { komitmen: 'tahap komitmen', bajet: 'bajet', bawaPasangan: 'bawa pasangan', jenisBilik: 'penginapan', saizBaju: 'saiz baju' };
+    const tiada = Object.keys(wajib).filter(k => !fd[k]).map(k => wajib[k]);
+    if (tiada.length) { ralat.textContent = 'Belum dijawab: ' + tiada.join(', ') + '.'; ralat.scrollIntoView({ block: 'center' }); return; }
+    ralat.textContent = '';
+    try {
+      await denganSibuk(btn, 'Menyimpan…', async () => {
+        await api('kajiSelidik', { jawapan: fd });
+        S.data.kajiSelidik = { ...fd, bilAnak: Number(fd.bilAnak) || 0 };
+        store.set('iku97_data', S.data);
+      });
+      S.tab = 'utama'; render(); scrollTo(0, 0); toast('Kaji selidik disimpan. Terima kasih!');
+    } catch (e) { ralat.textContent = e.message; }
+  },
+  async profil(f, btn) {
+    const fd = Object.fromEntries(new FormData(f));
+    try {
+      await denganSibuk(btn, 'Menyimpan…', async () => {
+        const r = await api('kemaskiniProfil', fd);
+        S.data.me = r.me; store.set('iku97_data', S.data);
+      });
+      $('#dlg').close(); render(); toast('Profil disimpan.');
+    } catch (e) { $('#ralat-profil').textContent = e.message; }
+  }
+};
+
+/* ================= Pendengar acara ================= */
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-act]');
+  if (!b || b.disabled) return;
+  const f = ACT[b.dataset.act];
+  if (f) { e.preventDefault(); f(b, e); }
+});
+document.addEventListener('submit', e => {
+  const f = e.target.closest('[data-form]');
+  if (!f) return;
+  e.preventDefault();
+  const h = BORANG[f.dataset.form];
+  if (h) h(f, f.querySelector('[type=submit]'));
+});
+document.addEventListener('input', e => {
+  if (e.target.dataset.in === 'cari') { S.adminCari = e.target.value; renderAdminList(); }
+});
+window.addEventListener('beforeinstallprompt', e => { e.preventDefault(); S.pasang = e; if (S.tab === 'utama' && S.data) render(); });
+const semakTalian = () => { $('#luar-talian').hidden = navigator.onLine; };
+window.addEventListener('online', semakTalian);
+window.addEventListener('offline', semakTalian);
+
+/* ================= Mula ================= */
+(function mula() {
+  semakTalian();
+  const q = new URLSearchParams(location.search);
+  if (q.get('k')) {
+    S.prefill = { telefon: q.get('p') || '', kod: q.get('k') };
+    history.replaceState(null, '', location.pathname);
+  }
+  if (S.token) {
+    S.data = store.get('iku97_data');
+    if (S.data) initDraf();
+    render();
+    muat();
+  } else {
+    render();
+    if (S.prefill && S.prefill.telefon && S.prefill.kod) {
+      const f = $('form[data-form=login]');
+      BORANG.login(f, f.querySelector('[type=submit]'));
+    }
+  }
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+  }
+})();
+</script>
+</body>
+</html>
