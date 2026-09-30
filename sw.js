@@ -1,6 +1,6 @@
 /* Service worker PWA Reunion IKU 1/97
  * Tukar VERSI setiap kali deploy kemas kini supaya telefon ambil fail baharu. */
-const VERSI = 'iku97-v1.0.0';
+const VERSI = 'iku97-v1.0.1';
 const ASET = ['./', './index.html', './config.js', './manifest.json',
   './icons/icon-192.png', './icons/icon-512.png', './icons/icon-maskable-512.png'];
 
