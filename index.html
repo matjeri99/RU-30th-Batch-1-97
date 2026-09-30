@@ -77,8 +77,7 @@ svg { flex: none; }
 .cop.besar { width: 150px; height: 150px; }
 .cop.besar b { font-size: 4.2rem; }
 .cop.besar small { font-size: .95rem; }
-.cop.kecil { width: 74px; height: 74px; position: absolute; right: 16px; top: 44px; opacity: .92; }
-.cop.kecil b { font-size: 1.9rem; }
+.cop.kecil { width: 60px; height: 60px; }
 @media (prefers-reduced-motion: no-preference) {
   .hero .cop { animation: tekan .7s cubic-bezier(.2,1.6,.4,1) both .15s; }
   @keyframes tekan { from { transform: rotate(-9deg) scale(1.6); opacity: 0; } to { transform: rotate(-9deg) scale(1); opacity: 1; } }
@@ -126,7 +125,31 @@ input.kod { font-family: var(--fon-papar); font-weight: 800; letter-spacing: .25
   display: flex; justify-content: space-between; padding: 14px 0; font-size: .75rem; font-weight: 700; text-align: center;
   align-items: center;
 }
-.kad-matrik .isi { padding: 18px 100px 18px 18px; min-height: 170px; }
+.kad-matrik .isi { padding: 18px 16px 20px 18px; min-height: 170px; display: grid; grid-template-columns: 1fr 92px; gap: 14px; align-items: start; }
+.foto-pasport {
+  position: relative; width: 92px; height: 118px; border-radius: 6px; background: var(--kampus-lembut);
+  border: 1px solid var(--garis); display: grid; place-items: center;
+  font-family: var(--fon-papar); font-weight: 800; font-size: 1.8rem; color: var(--kampus);
+}
+.foto-pasport img { width: 100%; height: 100%; object-fit: cover; border-radius: 6px; display: block; }
+.foto-pasport .cop.kecil { position: absolute; right: -12px; bottom: -16px; width: 60px; height: 60px; opacity: .9; }
+.foto-pasport .cop.kecil b { font-size: 1.5rem; }
+.foto-pasport .cop.kecil small { font-size: .62rem; }
+@media (prefers-color-scheme: light) { .foto-pasport .cop.kecil { mix-blend-mode: multiply; } }
+.dulu-kini { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.slot-foto { margin: 0; }
+.bingkai { aspect-ratio: 3 / 4; border-radius: 12px; overflow: hidden; background: var(--kad); border: 1.5px solid var(--garis); }
+.bingkai img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.bingkai .kosong {
+  width: 100%; height: 100%; border: 2px dashed var(--garis); border-radius: 12px; background: var(--latar);
+  display: grid; place-content: center; gap: 6px; text-align: center; font-weight: 700; color: var(--kampus); cursor: pointer; padding: 10px;
+}
+.bingkai .kosong span { font-size: 2rem; line-height: 1; }
+.slot-foto figcaption { margin-top: 8px; }
+.slot-foto figcaption b { font-family: var(--fon-papar); font-size: 1.1rem; }
+.slot-foto .baris-butang { margin-top: 6px; gap: 6px; }
+.slot-foto .baris-butang .btn { flex: 1; padding: 0 8px; }
+.redup { color: var(--redup); }
 .kad-matrik .jenis { font-size: .85rem; color: var(--redup); margin: 0 0 6px; }
 .kad-matrik .nama { font-size: 1.5rem; overflow-wrap: anywhere; }
 .kad-matrik dl { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 16px 0 0; }
@@ -381,6 +404,28 @@ const MOD_APP = window.matchMedia('(display-mode: standalone)').matches || windo
 const DALAM_APP_LAIN = /FBAN|FBAV|FB_IAB|Instagram|Line\/|MicroMessenger|WhatsApp/i.test(navigator.userAgent);
 const IOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
 
+const inisial = n => String(n || '').split(/\s+/)
+  .filter(w => w && !/^(bin|binti|bt|b\.|a\/l|a\/p|anak)$/i.test(w)).slice(0, 2).map(w => w[0]).join('').toUpperCase();
+
+function kecilkanFoto(file) {
+  return new Promise((ok, gagal) => {
+    if (!/^image\//.test(file.type) && !/\.(heic|heif)$/i.test(file.name)) return gagal(new Error('Pilih fail gambar.'));
+    const url = URL.createObjectURL(file), img = new Image();
+    img.onload = () => {
+      URL.revokeObjectURL(url);
+      const sk = Math.min(1, 720 / Math.max(img.naturalWidth, img.naturalHeight));
+      const w = Math.round(img.naturalWidth * sk), h = Math.round(img.naturalHeight * sk);
+      const c = document.createElement('canvas'); c.width = w; c.height = h;
+      const x = c.getContext('2d'); x.fillStyle = '#fff'; x.fillRect(0, 0, w, h); x.drawImage(img, 0, 0, w, h);
+      let q = 0.82, d = c.toDataURL('image/jpeg', q);
+      while (d.length > 380000 && q > 0.4) { q -= 0.1; d = c.toDataURL('image/jpeg', q); }
+      ok(d);
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); gagal(new Error('Gambar tidak dapat dibaca. Cuba gambar format JPG.')); };
+    img.src = url;
+  });
+}
+
 /* ================= Muat & draf ================= */
 function initDraf() {
   const d = S.data;
@@ -492,18 +537,21 @@ function vUtama() {
     ['borang', 'Isi kaji selidik', 'Bajet, penginapan dan saiz baju']
   ];
   const bil = Object.values(siap).filter(Boolean).length;
+  const foto = d.foto || {};
+  const fotoKad = foto.dulu || foto.kini;
   return `
   <section class="kad-matrik" aria-label="Kad alumni">
     <div class="jalur" aria-hidden="true"><span>IKU Bangsar</span><span>1997</span></div>
-    <div class="isi">
+    <div class="isi"><div>
       <p class="jenis">Kad Alumni Batch 1/97</p>
       <h1 class="nama">${esc(me.nama)}</h1>
       <dl>
         <div><dt>No. ahli</dt><dd>${esc(me.id)}</dd></div>
         <div><dt>Negeri</dt><dd>${esc(me.negeri || 'Belum diisi')}</dd></div>
       </dl>
+      </div>
+      <div class="foto-pasport">${fotoKad ? `<img src="${fotoKad}" alt="Gambar ${esc(me.nama)}">` : `<span aria-hidden="true">${esc(inisial(me.nama))}</span>`}${cop('kecil')}</div>
     </div>
-    ${cop('kecil')}
   </section>
   <button class="pautan" data-act="profil">Kemas kini profil</button>
   ${t.mesejAluan ? `<p class="aluan">${esc(t.mesejAluan)}</p>` : ''}
@@ -515,6 +563,14 @@ function vUtama() {
       <span><b>${tj}</b><small>${ket}</small></span>
       <span class="tanda">${siap[k] ? 'Selesai' : 'Belum'}</span></button></li>`).join('')}
   </ol>
+  <h2>Dulu &amp; Kini</h2>
+  <p class="redup">Kongsi gambar zaman IKU dan gambar terkini anda. Buat masa ini hanya anda yang nampak. Jika galeri alumni dibuka kelak, kebenaran anda akan diminta dahulu.</p>
+  <div class="dulu-kini">
+    ${slotFoto('DULU', '1997', 'Gambar zaman IKU', foto.dulu)}
+    ${slotFoto('KINI', 'Kini', 'Gambar terkini', foto.kini)}
+  </div>
+  <p><small>Tiada gambar lama dalam telefon? Ambil gambar album lama guna kamera.</small></p>
+  <input type="file" id="pilih-foto" accept="image/*" hidden>
   <div class="lain">
     ${S.pasang ? `<button class="btn" data-act="pasang">Pasang app di telefon</button>` : ''}
     ${store.get('iku97_kod') ? `<a class="btn" href="${waPautan(me.telefon, `Pautan log masuk Reunion IKU 1/97 saya (jangan kongsi):\n${location.origin + location.pathname}?p=${me.telefon}&k=${store.get('iku97_kod')}`)}" target="_blank" rel="noopener">Simpan pautan log masuk ke WhatsApp saya</a>` : ''}
@@ -522,6 +578,18 @@ function vUtama() {
     ${t.noWaAjk ? `<a class="pautan" href="${waPautan(t.noWaAjk, `Salam AJK, saya ${me.nama} (Batch 1/97). Saya ada pertanyaan tentang reunion.`)}" target="_blank" rel="noopener">Tanya AJK di WhatsApp</a>` : ''}
     <button class="pautan" data-act="keluar">Log keluar</button>
   </div>`;
+}
+
+function slotFoto(jenis, tahun, ket, src) {
+  const sedang = S.memuatFoto === jenis;
+  const isi = sedang ? `<div class="kosong" aria-live="polite">Memuat naik…</div>`
+    : src ? `<img src="${src}" alt="${ket}">`
+    : `<button class="kosong" data-act="pilihFoto" data-jenis="${jenis}"><span aria-hidden="true">+</span>Tambah ${ket.toLowerCase()}</button>`;
+  return `<figure class="slot-foto"><div class="bingkai">${isi}</div>
+    <figcaption><b>${tahun}</b>
+    ${src && !sedang ? `<div class="baris-butang"><button class="btn kecil" data-act="pilihFoto" data-jenis="${jenis}">Tukar</button>
+      <button class="btn kecil" data-act="buangFoto" data-jenis="${jenis}">Buang</button></div>` : `<small>${ket}</small>`}
+    </figcaption></figure>`;
 }
 
 function barSimpan(act, label, lumpuh, status) {
@@ -902,6 +970,20 @@ const ACT = {
     dlg.showModal();
   },
   tutupDlg() { $('#dlg').close(); },
+  pilihFoto(b) {
+    if (S.memuatFoto) return;
+    S.jenisFoto = b.dataset.jenis;
+    const inp = $('#pilih-foto'); inp.value = ''; inp.click();
+  },
+  async buangFoto(b) {
+    if (!confirm('Buang gambar ini?')) return;
+    const jenis = b.dataset.jenis;
+    try {
+      await denganSibuk(b, 'Membuang…', () => api('buangFoto', { jenis }));
+      S.data.foto = { ...(S.data.foto || {}), [jenis.toLowerCase()]: null };
+      store.set('iku97_data', S.data); render(); toast('Gambar dibuang.');
+    } catch (e) { toast(e.message, 'ralat'); }
+  },
   async pasang() {
     if (!S.pasang) return;
     S.pasang.prompt();
@@ -978,6 +1060,19 @@ document.addEventListener('submit', e => {
   e.preventDefault();
   const h = BORANG[f.dataset.form];
   if (h) h(f, f.querySelector('[type=submit]'));
+});
+document.addEventListener('change', async e => {
+  if (e.target.id !== 'pilih-foto' || !e.target.files[0]) return;
+  const jenis = S.jenisFoto;
+  S.memuatFoto = jenis; render();
+  try {
+    const data = await kecilkanFoto(e.target.files[0]);
+    await api('muatNaikFoto', { jenis, data });
+    S.data.foto = { ...(S.data.foto || {}), [jenis.toLowerCase()]: data };
+    store.set('iku97_data', S.data);
+    toast('Gambar disimpan.');
+  } catch (err) { toast(err.message, 'ralat'); }
+  finally { S.memuatFoto = null; render(); }
 });
 document.addEventListener('input', e => {
   if (e.target.dataset.in === 'cari') { S.adminCari = e.target.value; renderAdminList(); }
